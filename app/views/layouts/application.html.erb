@@ -10,7 +10,9 @@
   <div class="header">
     <div class="pure-menu pure-menu-horizontal green">
       <ul class="pure-menu-list">
-          <li class="pure-menu-item"><%= link_to "Home", root_path, :class => "pure-menu-link" %></li>
+          <li class="pure-menu-item"><a href=<%= root_path %>><img src="/img/rtr_logo.png", height="50"></a>
+            <!-- <%= link_to image_tag("/img/rtr_logo.png"),
+                                      root_path, class: "pure-menu-link" %></li> -->
           <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
               <a href="#" id="menuLink1" class="pure-menu-link">Services</a>
               <ul class="pure-menu-children">
