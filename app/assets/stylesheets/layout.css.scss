@@ -1,14 +1,31 @@
+body {
+  background-color: #90A1A0;
+}
+.debug {
+  border: 1px solid red;
+}
+
 .logo {
+  background-color: white;
   display: block;
   height: 12em;
   width: 24em;
-  margin: 0rem auto;
+  margin: 10% auto;
+  padding: 1rem 6rem;
+  border: .4rem solid #90A1A0;
+  border-radius: 20px;
 }
 
 .splash-image {
+  /*background-color: white;*/
   width: 100%;
   margin: 0 auto;
-  border-bottom: .7em solid #90A1A0;
+}
+
+.welcome-copy {
+  width: 33%;
+  margin: 0 auto;
+  font-size: 1.2em;
 }
 
 .pure-menu-item > a:hover {
