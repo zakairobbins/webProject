@@ -1,7 +1,16 @@
-.logo > img {
-  height: 10em;
-  width: 20em;
+.logo {
+  display: block;
+  height: 12em;
+  width: 24em;
+  margin: 0rem auto;
 }
+
+.splash-image {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: .7em solid #90A1A0;
+}
+
 .pure-menu-item > a:hover {
   background-color: #BAE286 !important;
 }

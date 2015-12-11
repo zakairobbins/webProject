@@ -10,26 +10,36 @@
   <div class="header">
     <div class="pure-menu pure-menu-horizontal green">
       <ul class="pure-menu-list">
-          <li class="pure-menu-item"><a href=<%= root_path %>><img src="/img/rtr_logo.png", height="50"></a>
-            <!-- <%= link_to image_tag("/img/rtr_logo.png"),
-                                      root_path, class: "pure-menu-link" %></li> -->
-          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-              <a href="#" id="menuLink1" class="pure-menu-link">Services</a>
-              <ul class="pure-menu-children">
-                  <li class="pure-menu-item"><%= link_to 'Resumes', resumes_path, :class => "pure-menu-link green" %></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link green">Cover Letters</a></li>
-                  <li class="pure-menu-item"><a href="#" class="pure-menu-link green">Consultation</a></li>
-              </ul>
-          </li>
-          <li class="pure-menu-item"><%= link_to "Terms and Conditions", terms_path, :class => "pure-menu-link" %></li>
+        <li class="pure-menu-item">
+          <a href=<%= root_path %>><img src="/img/rtr_logo.png", height="50"></a>
+        </li>
+        <li class="pure-menu-item">
+          <%= link_to "Samples", resumes_path, class: "pure-menu-link" %>
+        </li>
+        <li class="pure-menu-item">
+          <%= link_to "Consultation", root_path, class: "pure-menu-link" %>
+        </li>
+        <li class="pure-menu-item"><%= link_to "Terms and Conditions", terms_path, class: "pure-menu-link" %>
+        </li>
+      </ul>
+      <ul class="pure-menu-list" id="login-out-links">
+        <% if session[:user_id] %>
+        <li class="pure-menu-item">
+          <%= link_to "Log Out", logout_path, class: "pure-menu-link" %>
+        </li>
+        <% else %>
+        <li class="pure-menu-item">
+          <%= link_to "Sign Up", new_user_path, class: "pure-menu-link" %>
+        </li>
+        <li class="pure-menu-item">
+          <%= link_to "Log In", login_path, class: "pure-menu-link" %>
+        </li>
+        <% end %>
       </ul>
     </div>
-  <div class="logo">
-  <%= image_tag("rtr_logo.JPG", :alt => "Resumes that Resonate logo") %>
-  </div>
   </div>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
