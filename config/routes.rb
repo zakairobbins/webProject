@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :resumes, only: [:index, :show]
   resources :users
   resources :carts
+  resources :line_items
+  resources :products
 
   root 'welcome#index'
 
