@@ -73,17 +73,15 @@
     </ul>
   </div>
 </header>
+<div class='spacer'>.</div>
 
-<main>
   <div class="centered">
     <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "flash #{key}" %>
     <% end %>
   </div>
 
+  <%= yield %>
 
-<%= yield %>
-
-</main>
 </body>
 </html>

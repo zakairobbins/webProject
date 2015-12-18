@@ -1,0 +1,19 @@
+#splash {
+  height: 87%;
+}
+
+.button {
+  border-radius: .25rem;
+}
+.button.front {
+  color: #333;
+  background-color: #9ad14d;
+}
+
+.row {
+  /*padding-top: 10%;*/
+}
+
+.inline {
+  display: inline-block;
+}
