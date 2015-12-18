@@ -66,8 +66,13 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu" id="menu-right">
-      <li><a href="#">Sign up</a></li>
-      <li><a href="#">Log in</a></li>
+      <li><%= link_to "Shopping Cart", cart_path(session[:cart_id]) %></li>
+      <% if session[:user_id] %>
+        <li><%= link_to "Log out", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_path %></li>
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
       <!-- <li><a href="#">Five</a></li> -->
       <!-- <li><a href="#">Terms and Conditions</a></li> -->
     </ul>
