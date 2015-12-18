@@ -1,1 +1,18 @@
-<h1>home</h1>
+<div>
+  <div class="splash-image">
+    <%= image_tag("rtr_logo.JPG", alt: "Resumes that Resonate logo", class: "logo") %>
+  </div>
+  <div class="welcome-copy debug">
+    <p>
+      A professional resume writing service dedicated to the best client service. You will be thrilled when you get your job because we wrote you such a dope resume. Get that job that you deserve girl!
+    </p>
+  </div>
+</div>
+
+<div>
+<%= form_tag line_items_path(product_id: 1) do %>
+  <button type="input">
+  Buy Now
+  </button>
+<% end %>
+</div>

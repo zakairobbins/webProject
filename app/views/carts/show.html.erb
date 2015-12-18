@@ -1,0 +1,43 @@
+<h1>Hey bro check out this cart</h1>
+
+<table class="cart-table">
+  <thead>
+    <th>Quantity</th>
+    <th>Item</th>
+    <th>Price</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @cart.line_items.each do |line_item| %>
+    <tr>
+      <td>
+      <%= form_tag line_item_path(line_item), method: :patch, id: "item-quantity" do %>
+        <select name="quantity">
+        <% 10.times do |n| %>
+          <% if n + 1 == line_item.quantity %>
+            <option value="<%=n+1%>" selected><%=n+1%></option>
+          <% else %>
+            <option value="<%=n+1%>"><%=n+1%></option>
+          <% end %>
+        <% end %>
+        </select>
+      <% end %>
+      </td>
+      <td> <%= line_item.product.title %></td>
+      <td> <%= number_to_currency(line_item.product.price * line_item.quantity) %></td>
+      <td>
+        <%= link_to "Remove", line_item_path(line_item), method: :delete %>
+      </td>
+    </tr>
+    <% end %>
+    <tr class="total-row">
+      <td></td>
+      <td> Total:</td>
+      <td> <%= total_cart_price(@cart) %> </td>
+    </tr>
+  </tbody>
+</table>
+<div class="inline">
+<%= button_to 'Empty cart', @cart, method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+</div>

@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  get '/login' => 'sessions#new'
-
+  resources :sessions
   resources :resumes, only: [:index, :show]
   resources :users
-  resources :sessions
+  resources :carts
+  resources :line_items
+  resources :products
+
+  root 'welcome#index'
+
+  get '/terms' => 'terms#show'
+
+  get '/login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
 end

@@ -1,7 +1,41 @@
-.logo > img {
-  height: 10em;
-  width: 20em;
+#logo-img {
+  padding: 0;
 }
+
+.top-bar {
+  background-color: #9ad14d;
+}
+
+body {
+  // background-color: #90A1A0;
+}
+.debug {
+  border: 1px solid red;
+}
+
+.logo {
+  background-color: white;
+  display: block;
+  height: 12em;
+  width: 24em;
+  margin: 10% auto;
+  padding: 1rem 6rem;
+  border: .4rem solid #90A1A0;
+  border-radius: 20px;
+}
+
+.splash-image {
+  /*background-color: white;*/
+  width: 100%;
+  margin: 0 auto;
+}
+
+.welcome-copy {
+  width: 33%;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
+
 .pure-menu-item > a:hover {
   background-color: #BAE286 !important;
 }
@@ -12,4 +46,9 @@
 
 .light-green {
   background-color: #BAE286;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
 }
