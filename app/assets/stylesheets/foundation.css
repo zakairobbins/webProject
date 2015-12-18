@@ -2006,7 +2006,7 @@ select {
 .callout {
   margin: 0 0 1rem 0;
   padding: 1rem;
-  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: 0;
   position: relative;
   background-color: white; }
@@ -3029,6 +3029,8 @@ table.hover tr:nth-of-type(even):hover {
   line-height: 0;
   max-width: 100%;
   transition: box-shadow 200ms ease-out;
+  /*overflow: hidden;*/
+  max-height: 550px;
   border-radius: 0;
   margin-bottom: 1rem; }
   .thumbnail:hover, .thumbnail:focus {

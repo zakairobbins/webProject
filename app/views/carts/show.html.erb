@@ -11,7 +11,7 @@
     <% @cart.line_items.each do |line_item| %>
     <tr>
       <td>
-      <%= form_tag line_item_path(line_item), method: :patch, id: "item-quantity" do %>
+      <%= form_tag line_item_path(line_item), method: :patch, class: "item-quantity" do %>
         <select name="quantity">
         <% 10.times do |n| %>
           <% if n + 1 == line_item.quantity %>

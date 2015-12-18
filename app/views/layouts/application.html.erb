@@ -51,6 +51,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href="css/featherlight.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
 <header class="top-bar" id="header">
@@ -59,31 +61,38 @@
       <li>
         <a href=<%= root_path %>><img src="/img/rtr_logo.png" width="75" id="logo-img"></a>
       </li>
-      <li><a href="#">Samples</a></li>
+      <li><a href="#work-samples">Samples</a></li>
       <li><a href="#">Consultation</a></li>
-      <li><a href="#">Terms and Conditons</a></li>
+      <li><%= link_to "Terms and Conditons", terms_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="menu" id="menu-right">
-      <li><a href="#">Sign up</a></li>
-      <li><a href="#">Log in</a></li>
+      <li><%= link_to "Shopping Cart", cart_path(session[:cart_id]) %></li>
+      <% if session[:user_id] %>
+        <li><%= link_to "Log out", logout_path %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_user_path %></li>
+        <li><%= link_to "Log in", login_path %></li>
+      <% end %>
       <!-- <li><a href="#">Five</a></li> -->
       <!-- <li><a href="#">Terms and Conditions</a></li> -->
     </ul>
   </div>
-</header>
 
-<main>
+</header>
+<div class='spacer'>.</div>
+
   <div class="centered">
     <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "flash #{key}" %>
     <% end %>
   </div>
 
+  <%= yield %>
 
-<%= yield %>
+  <script src="js/featherlight.js" type="text/javascript" charset="utf-8"></script>
 
-</main>
 </body>
+
 </html>

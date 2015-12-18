@@ -22,7 +22,7 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    cart = @line_item.cart
+    @cart = @line_item.cart
     @line_item.destroy
     redirect_to cart_path(@cart)
   end
