@@ -14,6 +14,19 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def update
+    @cart = Cart.find(session[:cart_id])
+    @line_item.quantity = params[:quantity]
+    @line_item.save
+    redirect_to cart_path(@cart)
+  end
+
+  def destroy
+    cart = @line_item.cart
+    @line_item.destroy
+    redirect_to cart_path(@cart)
+  end
+
   private
 
   def set_line_item
