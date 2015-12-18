@@ -1,5 +1,13 @@
+#logo-img {
+  padding: 0;
+}
+
+.top-bar {
+  background-color: #9ad14d;
+}
+
 body {
-  background-color: #90A1A0;
+  // background-color: #90A1A0;
 }
 .debug {
   border: 1px solid red;
@@ -38,4 +46,9 @@ body {
 
 .light-green {
   background-color: #BAE286;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
 }
