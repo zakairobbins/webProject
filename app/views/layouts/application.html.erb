@@ -51,6 +51,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link href="css/featherlight.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
 <header class="top-bar" id="header">
@@ -61,7 +63,7 @@
       </li>
       <li><a href="#work-samples">Samples</a></li>
       <li><a href="#">Consultation</a></li>
-      <li><a href="#">Terms and Conditons</a></li>
+      <li><%= link_to "Terms and Conditons", terms_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
@@ -77,6 +79,7 @@
       <!-- <li><a href="#">Terms and Conditions</a></li> -->
     </ul>
   </div>
+
 </header>
 <div class='spacer'>.</div>
 
@@ -88,5 +91,8 @@
 
   <%= yield %>
 
+  <script src="js/featherlight.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
+
 </html>
