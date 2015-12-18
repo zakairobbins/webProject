@@ -37,3 +37,7 @@
     </tr>
   </tbody>
 </table>
+<div class="inline">
+<%= button_to 'Empty cart', @cart, method: :delete,
+              data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+</div>
