@@ -11,12 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217214214) do
+ActiveRecord::Schema.define(version: 20151229231652) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "educations", force: :cascade do |t|
+    t.integer  "request_id"
+    t.string   "school_name"
+    t.string   "degree"
+    t.string   "location"
+    t.string   "awards"
+    t.date     "graduation_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "educations", ["request_id"], name: "index_educations_on_request_id"
+
+  create_table "experiences", force: :cascade do |t|
+    t.integer  "request_id"
+    t.string   "company"
+    t.string   "location"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "job_title"
+    t.text     "responsibilities"
+    t.text     "awards"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "experiences", ["request_id"], name: "index_experiences_on_request_id"
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -35,6 +63,25 @@ ActiveRecord::Schema.define(version: 20151217214214) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "phone_number"
+    t.text     "objective"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer  "request_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "skills", ["request_id"], name: "index_skills_on_request_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -42,5 +89,18 @@ ActiveRecord::Schema.define(version: 20151217214214) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
+
+  create_table "volunteers", force: :cascade do |t|
+    t.integer  "request_id"
+    t.string   "organization"
+    t.string   "location"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "duties"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "volunteers", ["request_id"], name: "index_volunteers_on_request_id"
 
 end
