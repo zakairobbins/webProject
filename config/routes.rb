@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'request/get'
 
-  get 'request/post'
-
-  get 'request/destroy'
 
   resources :sessions
   resources :resumes, only: [:index, :show]
@@ -11,6 +7,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :line_items
   resources :products
+  resources :requests, only: [:new, :create, :destroy]
 
   root 'welcome#index'
 
