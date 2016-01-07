@@ -4,8 +4,8 @@
 }
 
 .form-section {
-  border-radius: .3em;
-  border: 1px solid #a5a7a4;
+  /*border-radius: .3em;*/
+  border: 1px solid #cacaca;
   margin: 1em 0;
   padding: 1em;
 }
@@ -17,3 +17,15 @@
 .request-form textarea {
   columns: 40;
 }
+
+.remove-link {
+  color: #cb310f;
+}
+.remove-link:hover {
+  color: #cb310f;
+}
+
+
+/*.fields-div {
+  display: inline-block;
+}*/
