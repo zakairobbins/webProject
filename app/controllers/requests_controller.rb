@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
     3.times { @request.experiences.build }
-    2.times { @request.educations.build }
+    3.times { @request.educations.build }
     2.times { @request.volunteers.build }
     2.times { @request.skills.build }
   end

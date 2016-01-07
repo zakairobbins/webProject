@@ -6,8 +6,9 @@ $(document).ready(function(){
     $('.remove-link').click(function(e) {
       e.preventDefault();
       console.log('remove-link clicked');
-      $(this).prev("input[type=hidden]").val("1");
-      $(this).closest(".fields").hide();
+      $(this).parent('div').children('input').first().val('');
+      // $(this).prev("input[type=hidden]").val("1");
+      // $(this).closest(".fields").hide();
 
     });
 

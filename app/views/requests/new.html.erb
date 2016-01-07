@@ -23,18 +23,7 @@
 
   <h5>Education</h5>
   <%= f.fields_for :educations do |ed_f| %>
-    <div class="form-section">
-      <%= ed_f.label :school_name %>
-      <%= ed_f.text_field :school_name %>
-      <%= ed_f.label :degree %>
-      <%= ed_f.text_field :degree %>
-      <%= ed_f.label :location %>
-      <%= ed_f.text_area :location %>
-      <%= ed_f.label :awards %>
-      <%= ed_f.text_field :awards %>
-      <%= ed_f.label :graduation_date %>
-      <%= ed_f.date_select :graduation_date %>
-    </div>
+    <%= render 'education_fields', f: ed_f %>
   <% end %>
 
 
