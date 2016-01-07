@@ -3,12 +3,12 @@
 $(document).ready(function(){
     console.log("request js ready");
 
-    $('.remove-link').click(function(e) {
+    $('body').on('click', 'a.remove-link', function(e) {  
       e.preventDefault();
       console.log('remove-link clicked');
-      $(this).parent('div').children('input').first().val('');
+      $(this).parent('div').children('.required').first().val('');
       // $(this).prev("input[type=hidden]").val("1");
-      // $(this).closest(".fields").hide();
+      $(this).parent("div.fields").hide();
 
     });
 

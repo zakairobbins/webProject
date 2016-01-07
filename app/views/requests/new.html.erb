@@ -1,56 +1,53 @@
 <div class="container request-form">
 <%= form_for @request do |f| %>
   <h5>Personal Info</h5>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_area :address %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-  <%= f.label :objective %>
-  <%= f.text_field :objective %>
+  <fieldset class="fieldset">
+    <legend>Personal Info</legend>
+    <%= f.label :name, 'Full name' %>
+    <%= f.text_field :name, size: '24' %>
+    <%= f.label :address %>
+    <%= f.text_area :address, rows: '3', cols: '28' %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %>
+    <%= f.label :objective %>
+    <%= f.text_field :objective %>
+  </fieldset>
 
-  <h5>Experience</h5>
+  <fieldset class="fieldset">
+    <legend>Work Experience</legend>
+    <%= f.fields_for :experiences do |ex_f| %>
+      <%= render 'experience_fields', f: ex_f %>
+    <% end %>
 
-  <%= f.fields_for :experiences do |ex_f| %>
-    <%= render 'experience_fields', f: ex_f %>
-  <% end %>
+    <%= fa_icon "plus" %> <%= link_to_add_fields "Add Work Experience", f, :experiences %>
+  </fieldset>
 
-  <%= link_to_add_fields "Add work experience", f, :experiences %>
+  <fieldset class="fieldset">
+    <legend>Education</legend>
+    <%= f.fields_for :educations do |ed_f| %>
+      <%= render 'education_fields', f: ed_f %>
+    <% end %>
 
+    <%= fa_icon "plus" %> <%= link_to_add_fields "Add Education", f, :educations %>
+  </fieldset>
 
-  <h5>Education</h5>
-  <%= f.fields_for :educations do |ed_f| %>
-    <%= render 'education_fields', f: ed_f %>
-  <% end %>
+  <fieldset class="fieldset">
+    <legend>Skills</legend>
+    <%= f.fields_for :skills do |sk_f| %>
+      <%= render 'skill_fields', f: sk_f %>
+    <% end %>
 
+    <%= fa_icon "plus" %> <%= link_to_add_fields "Add Skill", f, :skills %>
+  </fieldset>
 
-  <h5>Skills</h5>
-  <%= f.fields_for :skills do |sk_f| %>
-    <div class="form-section">
-      <%= sk_f.label :description %>
-      <%= sk_f.text_area :description %>
-    </div>
-  <% end %>
-
-
-  <h5>Volunteer Work</h5>
-  <%= f.fields_for :volunteers do |vo_f| %>
-    <div class="form-section">
-      <%= vo_f.label :organization %>
-      <%= vo_f.text_field :organization %>
-      <%= vo_f.label :location %>
-      <%= vo_f.text_area :location %>
-      <%= vo_f.label :start_date %>
-      <%= vo_f.date_select :start_date %>
-      <%= vo_f.label :end_date %>
-      <%= vo_f.date_select :end_date %>
-      <%= vo_f.label :duties %>
-      <%= vo_f.text_area :duties %>
-    </div>
-  <% end %>
+  <fieldset class="fieldset">
+    <legend>Volunteer Work</legend>
+    <%= f.fields_for :volunteers do |vo_f| %>
+      <%= render 'volunteer_fields', f: vo_f %>
+    <% end %>
+  </fieldset>
 
   <%= f.submit "Place Order"%>
 <% end %>

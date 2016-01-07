@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
 }
 
 .form-section {
@@ -8,4 +8,12 @@
   border: 1px solid #a5a7a4;
   margin: 1em 0;
   padding: 1em;
+}
+
+.request-form input {
+  width: 16em;
+}
+
+.request-from textarea {
+  columns: 40;
 }
