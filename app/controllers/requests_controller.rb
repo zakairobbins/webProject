@@ -5,9 +5,10 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @cart = Cart.find(session[:cart_id])
     @request = Request.new
     @request.experiences.build
-    @request.educations.build 
+    @request.educations.build
     @request.volunteers.build
     @request.skills.build
   end

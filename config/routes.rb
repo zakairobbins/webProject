@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/terms' => 'terms#show'
+  post '/checkout' => 'carts#checkout'
 
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'

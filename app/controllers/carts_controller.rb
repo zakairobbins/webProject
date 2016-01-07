@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :set_cart, only: [:show, :edit, :update, :destroy, :checkout]
   def show
   end
 
@@ -9,6 +9,10 @@ class CartsController < ApplicationController
 
   def new
     @cart = Cart.new
+  end
+
+  def checkout
+    redirect_to new_request_url
   end
 
   def edit

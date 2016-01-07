@@ -1,4 +1,4 @@
-<h1>Hey bro check out this cart</h1>
+<h1>Your Shopping Cart</h1>
 
 <table class="cart-table">
   <thead>
@@ -40,4 +40,5 @@
 <div class="inline">
 <%= button_to 'Empty cart', @cart, method: :delete,
               data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+<%= button_to 'Enter Personal Info', checkout_path, params: {id: @cart.id}, class: "button alert small" %>
 </div>
