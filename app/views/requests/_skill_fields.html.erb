@@ -1,5 +1,10 @@
-<div class="form-section fields">
-  <%= f.label :description %>
-  <%= f.text_area :description, class: 'required', rows: '3', cols: '28' %>  <br />
-  <a href="#" class="remove-link">remove</a>
+<div class="fields">
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <%# f.label :description %>
+      <%= f.text_field :description, class: 'required', rows: '3', cols: '28' %>
+
+      <a href="#" class="remove-link"><%= fa_icon "remove" %> remove</a>
+    </div>
+  </div>
 </div>
