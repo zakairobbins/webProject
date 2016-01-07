@@ -11,10 +11,6 @@ class CartsController < ApplicationController
     @cart = Cart.new
   end
 
-  def checkout
-    redirect_to new_request_url
-  end
-
   def edit
   end
 
