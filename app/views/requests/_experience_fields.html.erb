@@ -1,0 +1,18 @@
+<div class="form-section fields">
+  <%= f.label :company %>
+  <%= f.text_field :company %>
+  <%= f.label :location %>
+  <%= f.text_area :location %>
+  <%# f.label :start_date %>
+  <%# f.date_select :start_date %>
+  <%# f.label :end_date %>
+  <%# f.date_select :end_date %>
+  <%= f.label :job_title %>
+  <%= f.text_field :job_title %>
+  <%= f.label :responsibilities %>
+  <%= f.text_area :responsibilities %>
+  <%= f.label :awards %>
+  <%= f.text_area :awards %>
+  <%= f.hidden_field :_destroy, class: 'destroy-hidden-field' %>
+  <a href="#" class="remove-link">remove</a>
+</div>

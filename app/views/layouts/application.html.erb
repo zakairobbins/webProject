@@ -68,7 +68,7 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu" id="menu-right">
-      <li><%= link_to "Shopping Cart", cart_path(session[:cart_id]) %></li>
+      <li><%# link_to "Shopping Cart", cart_path(session[:cart_id]) %></li>
       <% if session[:user_id] %>
         <li><%= link_to "Log out", logout_path %></li>
       <% else %>

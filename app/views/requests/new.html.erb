@@ -11,54 +11,58 @@
   <%= f.text_field :phone_number %>
   <%= f.label :objective %>
   <%= f.text_field :objective %>
+
   <h5>Experience</h5>
+
   <%= f.fields_for :experiences do |ex_f| %>
-    <%= ex_f.label :company %>
-    <%= ex_f.text_field :company %>
-    <%= ex_f.label :location %>
-    <%= ex_f.text_area :location %>
-    <%= ex_f.label :start_date %>
-    <%= ex_f.date_select :start_date %>
-    <%= ex_f.label :end_date %>
-    <%= ex_f.date_select :end_date %>
-    <%= ex_f.label :job_title %>
-    <%= ex_f.text_field :job_title %>
-    <%= ex_f.label :responsibilities %>
-    <%= ex_f.text_area :responsibilities %>
-    <%= ex_f.label :awards %>
-    <%= ex_f.text_area :awards %>
+    <%= render 'experience_fields', f: ex_f %>
   <% end %>
+
+  <%= link_to_add_fields "Add work experience", f, :experiences %>
+
+
   <h5>Education</h5>
   <%= f.fields_for :educations do |ed_f| %>
-    <%= ed_f.label :school_name %>
-    <%= ed_f.text_field :school_name %>
-    <%= ed_f.label :degree %>
-    <%= ed_f.text_field :degree %>
-    <%= ed_f.label :location %>
-    <%= ed_f.text_area :location %>
-    <%= ed_f.label :awards %>
-    <%= ed_f.text_field :awards %>
-    <%= ed_f.label :graduation_date %>
-    <%= ed_f.date_select :graduation_date %>
+    <div class="form-section">
+      <%= ed_f.label :school_name %>
+      <%= ed_f.text_field :school_name %>
+      <%= ed_f.label :degree %>
+      <%= ed_f.text_field :degree %>
+      <%= ed_f.label :location %>
+      <%= ed_f.text_area :location %>
+      <%= ed_f.label :awards %>
+      <%= ed_f.text_field :awards %>
+      <%= ed_f.label :graduation_date %>
+      <%= ed_f.date_select :graduation_date %>
+    </div>
   <% end %>
+
+
   <h5>Skills</h5>
   <%= f.fields_for :skills do |sk_f| %>
-    <%= sk_f.label :description %>
-    <%= sk_f.text_area :description %>
+    <div class="form-section">
+      <%= sk_f.label :description %>
+      <%= sk_f.text_area :description %>
+    </div>
   <% end %>
+
+
   <h5>Volunteer Work</h5>
   <%= f.fields_for :volunteers do |vo_f| %>
-    <%= vo_f.label :organization %>
-    <%= vo_f.text_field :organization %>
-    <%= vo_f.label :location %>
-    <%= vo_f.text_area :location %>
-    <%= vo_f.label :start_date %>
-    <%= vo_f.date_select :start_date %>
-    <%= vo_f.label :end_date %>
-    <%= vo_f.date_select :end_date %>
-    <%= vo_f.label :duties %>
-    <%= vo_f.text_area :duties %>
+    <div class="form-section">
+      <%= vo_f.label :organization %>
+      <%= vo_f.text_field :organization %>
+      <%= vo_f.label :location %>
+      <%= vo_f.text_area :location %>
+      <%= vo_f.label :start_date %>
+      <%= vo_f.date_select :start_date %>
+      <%= vo_f.label :end_date %>
+      <%= vo_f.date_select :end_date %>
+      <%= vo_f.label :duties %>
+      <%= vo_f.text_area :duties %>
+    </div>
   <% end %>
+
   <%= f.submit "Place Order"%>
 <% end %>
 </div>

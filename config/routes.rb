@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :line_items
   resources :products
-  resources :requests, only: [:new, :create, :destroy]
+  resources :requests, except: [:index, :edit, :update]
 
   root 'welcome#index'
 
