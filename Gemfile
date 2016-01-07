@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
+gem 'sendgrid-ruby'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -24,11 +25,12 @@ gem 'font-awesome-rails'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
