@@ -1,8 +1,13 @@
 class RequestsController < ApplicationController
+
+  def show
+    @request = Request.find(params[:id])
+  end
+
   def new
     @request = Request.new
     @request.experiences.build
-    @request.educations.build
+    @request.educations.build 
     @request.volunteers.build
     @request.skills.build
   end
