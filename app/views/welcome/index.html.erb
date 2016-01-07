@@ -23,7 +23,7 @@
     <p>Let us write a personalized resume that highlights your skills and experience. We can tailor your resume to match any professional level, industry, or a unique opportunity. </p>
     <div class="centered">
       <div class="inline centered">
-        <a href="#" class="button front small">Details</a>
+        <a href="/#work-samples" class="button front small">Details</a>
       </div>
       <div class="inline centered">
         <%= form_tag line_items_path(product_id: 2) do %>
@@ -69,55 +69,208 @@
     </div>
   </div>
 </div>
-
-  <a name="work-samples">
+<a name="work-samples"></a>
 <hr>
 <div class="row column">
-  <h3>Our Recent Work</h3>
+  <h3>Work Samples</h3>
 </div>
-<div class="row medium-up-3">
-  <div class="column">
-    <a href="#" data-featherlight="img/banking_pro.png" data-title="My caption">
-      <img class="thumbnail" src="img/banking_pro_tn.png" data-lightbox="image-1">
-    </a>
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
-  </div>
-  <div class="column">
-    <img class="thumbnail" src="http://placehold.it/550x550">
+<ul class="tabs" data-tabs id="example-tabs">
+  <li class="tabs-title is-active"><a href="#resume-panel" aria-selected="true">Resumes</a></li>
+  <li class="tabs-title"><a href="#cover-letter-panel">Cover Letters</a></li>
+  <li class="tabs-title"><a href="#cv-panel">CVs</a></li>
+</ul>
+
+<div class="tabs-content" data-tabs-content="example-tabs">
+  <div class="tabs-panel is-active" id="resume-panel">
+    <div class="row medium-up-3">
+      <div class="column">
+        <a href="#" data-featherlight="img/banking_pro.png" data-title="My caption">
+          <img class="thumbnail" src="img/banking_pro_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Banking Professional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/college_graduate.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/college_graduate_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">College Graduate</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/college_intern.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/college_intern_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">College Intern</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/executive.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/executive_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Executive</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/promotional.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/promotional_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Promotional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/special_needs_therapist_educator.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/special_needs_therapist_educator_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Special Needs Educator</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/transitional.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/transitional_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Transitional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/transitional_2.png" data-title="My caption">
+          <img class="thumbnail" src="img/thumbnails/transitional_2_tn.png" data-lightbox="image-1">
+          <p class="sample_caption">Transitional</p>
+        </a>
+      </div>
+      <div class="column">
+
+      </div>
+
+    </div>
   </div>
 
-</div>
-<hr>
-<div class="row column">
-  <ul class="menu">
-    <li><a href="#">One</a></li>
-    <li><a href="#">Two</a></li>
-    <li><a href="#">Three</a></li>
-    <li><a href="#">Four</a></li>
-  </ul>
-</div>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-<script>
-$(document).foundation();
-</script>
+  <div class="tabs-panel" id="cover-letter-panel">
+    <div class="row medium-up-3">
+      <div class="column">
+        <a href="#" data-featherlight="img/banking_pro.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Banking Professional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/college_graduate.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">College Graduate</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/college_intern.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">College Intern</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/executive.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Executive</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/promotional.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Promotional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/special_needs_therapist_educator.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Special Needs Educator</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/transitional.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Transitional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/transitional_2.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">Transitional</p>
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" data-featherlight="img/college_graduate.png" data-title="My caption">
+          <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+          <p class="sample_caption">???</p>
+        </a>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="tabs-panel" id="cv-panel">
+      <div class="row medium-up-3">
+        <div class="column">
+          <a href="#" data-featherlight="img/banking_pro.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Banking Professional</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/college_graduate.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">College Graduate</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/college_intern.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">College Intern</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/executive.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Executive</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/promotional.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Promotional</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/special_needs_therapist_educator.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Special Needs Educator</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/transitional.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Transitional</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/transitional_2.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">Transitional</p>
+          </a>
+        </div>
+        <div class="column">
+          <a href="#" data-featherlight="img/college_graduate.png" data-title="My caption">
+            <img class="thumbnail" src="http://placehold.it/550x550" data-lightbox="image-1">
+            <p class="sample_caption">???</p>
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <hr>
+    <div class="row column">
+      <ul class="menu">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+    $(document).foundation();
+    </script>
