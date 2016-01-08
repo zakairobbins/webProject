@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show, :edit, :update, :destroy, :checkout]
+  before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def show
   end
 
@@ -21,6 +21,11 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     flash[:success] = "Shopping cart empty"
     redirect_to root_url
+  end
+
+  def checkout
+    @cart = Cart.find(session[:cart_id])
+    @request = Request.last
   end
 
   private
