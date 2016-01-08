@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108000632) do
+ActiveRecord::Schema.define(version: 20160108012938) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20160108000632) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.boolean  "completed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "completed",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "products", force: :cascade do |t|

@@ -16,18 +16,18 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     if @request.save
-      client = SendGrid::Client.new(api_key: ENV['rtr_test_key'])
-      mail = SendGrid::Mail.new do |m|
-        m.to = "#{@request.email}"
-        m.from = 'thatguyzakai@gmail.com'
-        m.subject = 'Success!'
-        m.text = "I heard you like pineapple, #{@request.name}."
-      end
-      res = client.send(mail)
-      p res.code
-      p res.body
-      flash[:success] = "thank you for your order"
-      redirect_to root_path
+      session[:request_id] = @request.id
+      # client = SendGrid::Client.new(api_key: ENV['rtr_test_key'])
+      # mail = SendGrid::Mail.new do |m|
+      #   m.to = "#{@request.email}"
+      #   m.from = 'thatguyzakai@gmail.com'
+      #   m.subject = 'Success!'
+      #   m.text = "I heard you like pineapple, #{@request.name}."
+      # end
+      # res = client.send(mail)
+      # p res.code
+      # p res.body
+      redirect_to orders_create_url
     else
       render :new
     end
