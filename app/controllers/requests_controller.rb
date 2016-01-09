@@ -41,6 +41,11 @@ class RequestsController < ApplicationController
     end
   end
 
+  def edit
+    @cart = Cart.find(session[:cart_id])
+    @request = Order.find(session[:order_id]).request
+  end
+
   def destroy
   end
 

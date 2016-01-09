@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :line_items
   resources :products
-  resources :requests, except: [:index, :edit, :update]
+  resources :requests, except: [:index]
 
   root 'welcome#index'
 

@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def show
+    @request = Order.find(session[:order_id]).request if session[:order_id]
   end
 
   def index
