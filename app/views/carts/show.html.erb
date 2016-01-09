@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Your Shopping Cart</h1>
 
 <table class="cart-table">
@@ -37,9 +38,25 @@
     </tr>
   </tbody>
 </table>
+
 <div class="inline">
-<%= button_to 'Empty cart', @cart, method: :delete,
-              data: { confirm: 'Are you sure?' }, class: "button alert small" %>
-<%= button_to 'Enter Personal Info', new_request_path, method: 'get', class: "button alert small" %>
-<%= button_to 'Continue Shopping', root_path, method: 'get', class: "button alert small" %>
+  <%= button_to 'Back to Shopping', root_path,
+                method: 'get', class: "button small" %>
+</div>
+
+<div class="inline">
+  <% if session[:order_id] %>
+    <%= button_to 'Continue Checkout', edit_request_path(@request),
+                  method: 'get', class: "button success small" %>
+  <% else %>
+    <%= button_to 'Begin Checkout', new_request_path,
+                  method: 'get', class: "button success small" %>
+  <% end %>
+</div>
+
+<div>
+  <%= button_to "Empty cart", @cart, method: :delete,
+      data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+</div>
+
 </div>

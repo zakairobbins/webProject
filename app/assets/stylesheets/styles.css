@@ -35,7 +35,13 @@
   text-align: center;
 }
 
+.right-aligned {
+  text-align: right;
+}
 
+.inline {
+  display: inline-block;
+}
 /*.fields-div {
   display: inline-block;
 }*/

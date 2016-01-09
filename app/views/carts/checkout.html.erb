@@ -1,4 +1,67 @@
 <div class="container">
+<h2>Please review your order:</h2>
+
+<table>
+<% @cart.line_items.each do |l_i| %>
+  <tr>
+    <td><%= l_i.product.title  %></td>
+    <td>X</td>
+    <td><%= l_i.quantity %></td>
+    <td>=</td>
+    <td><%= number_to_currency(l_i.product.price * l_i.quantity) %>
+  </tr>
+<% end %>
+  <tr>
+    <td></td><td></td><td></td><td></td>
+    <td class="right-aligned">
+      <strong><%= number_to_currency(@cart.total_price) %></strong>
+    </td>
+  </tr>
+</table>
+
+<ul>
+  <h3>Personal Info:</h3>
+  <li><%= @request.name %></li>
+  <li><%= @request.address %></li>
+  <li><%= @request.email %></li>
+  <li><%= @request.phone_number %></li>
+  <li><%= @request.objective %></li>
+
+  <h3>Experience:</h3>
+  <% @request.experiences.each do |experience|  %>
+    <div>
+      <li><%= experience.company %></li>
+      <li><%= experience.job_title %></li>
+      <li><%= experience.location %></li>
+      <li><%= experience.start_date %></li>
+      <li><%= experience.end_date %></li>
+      <li><%= experience.responsibilities %></li>
+      <li><%= experience.awards %></li>
+    </div>
+  <% end %>
+
+  <h3>Education:</h3>
+  <% @request.educations.each do |edu| %>
+    <li><%= edu.degree %> = <%= edu.school_name %></li>
+  <% end %>
+
+  <h3>Skills:</h3>
+  <% @request.skills.each do |skill| %>
+    <li><%= skill.description %></li>
+  <% end %>
+
+  <h3>Volunteer Experience:</h3>
+  <% @request.volunteers.each do |vol| %>
+    <li><%= vol.organization %></li>
+  <% end %>
+</ul>
+
+<%= button_to 'Edit this order', cart_path(@cart),
+              method: 'get', class: "button small" %>
+
+<%= button_to 'Cancel this order', root_path,
+              method: 'get', class: "button warning small" %>
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_xclick">
   <input type="hidden" name="business" value="g7293@outlook.com">
@@ -17,4 +80,3 @@
 
 </form>
 </div>
-<p><%=@request.name %></p>

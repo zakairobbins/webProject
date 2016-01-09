@@ -41,12 +41,28 @@ class RequestsController < ApplicationController
     end
   end
 
+  def edit
+    @cart = Cart.find(session[:cart_id])
+    @request = Order.find(session[:order_id]).request
+  end
+
+  def update
+    @request = Order.find(session[:order_id]).request
+
+    if @request.update(request_params)
+      redirect_to checkout_url
+    else
+      flash[:error] = "Sorry, your personal information wasn't updated"
+      render :edit
+    end
+  end
+
   def destroy
   end
 
   private
 
   def request_params
-    params.require(:request).permit(:name, :email, :address, :phone_number, :objective, experiences_attributes: [:company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards], educations_atributes: [:school_name, :degree, :location, :awards, :graduation_date], skills_attributes: [:description], volunteers_attributes: [:organization, :location, :start_date, :end_date, :duties])
+    params.require(:request).permit(:name, :email, :address, :phone_number, :objective, experiences_attributes: [:id, :company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards], educations_attributes: [:school_name, :degree, :location, :awards, :graduation_date], skills_attributes: [:description], volunteers_attributes: [:organization, :location, :start_date, :end_date, :duties])
   end
 end
