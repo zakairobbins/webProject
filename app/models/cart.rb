@@ -13,4 +13,26 @@ class Cart < ActiveRecord::Base
 
     current_item
   end
+
+  def total_price
+    result = 0
+    line_items.each do |item|
+      result += (item.product.price * item.quantity)
+    end
+
+    result.to_f
+  end
+
+  def generate_short_list
+    result = ''
+    line_items.each do |item|
+      if result.empty?
+        result += item.product.title
+      else
+        result += ', ' + item.product.title
+      end
+    end
+
+    result 
+  end
 end
