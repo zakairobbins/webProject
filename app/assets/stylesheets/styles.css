@@ -25,6 +25,9 @@
   color: #cb310f;
 }
 
+.right-aligned {
+  text-align: right;
+}
 
 /*.fields-div {
   display: inline-block;
