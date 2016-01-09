@@ -56,6 +56,11 @@
   <% end %>
 </ul>
 
+<%= button_to 'Edit this order', cart_path(@cart),
+              method: 'get', class: "button small" %>
+
+<%= button_to 'Cancel this order', root_path,
+              method: 'get', class: "button warning small" %>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
   <input type="hidden" name="cmd" value="_xclick">

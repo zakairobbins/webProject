@@ -46,6 +46,17 @@ class RequestsController < ApplicationController
     @request = Order.find(session[:order_id]).request
   end
 
+  def update
+    @request = Order.find(session[:order_id]).request
+
+    if @request.update(request_params)
+      redirect_to checkout_url
+    else
+      flash[:error] = "Sorry, your personal information wasn't updated"
+      render :edit
+    end
+  end
+
   def destroy
   end
 
