@@ -14,6 +14,7 @@ class ContactController < ApplicationController
       res = client.send(mail)
       p res.code
       p res.body
-      redirect_to contact_new_path
+      flash[:success] = "Thank you for your message, we will get back to you shortly."
+      redirect_to root_url
   end
 end

@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container request-form">
   <h1>Contact</h1>
   <p>If you have any questions about our process or services, send us a message below and we'll contact you shortly.</p>
 
-  <%= form_tag contact_create_path do %>
+  <%= form_tag contact_create_path, class: "contact-message" do %>
     <%= label_tag :name, 'Name' %>
     <%= text_field_tag :name %>
     <%= label_tag :email, 'Email' %>
@@ -11,7 +11,7 @@
     <%= text_field_tag :phone_number %>
     <%= label_tag :message, 'Message' %>
     <%= text_area_tag :message %>
-    <%= submit_tag %>
+    <%= submit_tag "Send"%>
   <% end %>
 
 </div>

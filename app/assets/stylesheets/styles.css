@@ -25,6 +25,11 @@
   color: #cb310f;
 }
 
+.contact-message > textarea {
+  width: 25em;
+  height: 10em;
+}
+
 
 /*.fields-div {
   display: inline-block;
