@@ -26,7 +26,7 @@ class CartsController < ApplicationController
 
   def checkout
     @cart = Cart.find(session[:cart_id])
-    @request = Request.last
+    @request = Order.find(session[:order_id]).request
   end
 
   private

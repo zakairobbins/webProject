@@ -17,8 +17,15 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     if @request.save
       @order = Order.new
-      @order.request = @request
-      @order.cart = Cart.find(session[:cart_id])
+      if @order.save
+        @order.request = @request
+        @order.cart = Cart.find(session[:cart_id])
+        session[:order_id] = @order.id
+        redirect_to checkout_path
+      else
+        render :new
+      end
+
       # client = SendGrid::Client.new(api_key: ENV['rtr_test_key'])
       # mail = SendGrid::Mail.new do |m|
       #   m.to = "#{@request.email}"
@@ -29,7 +36,6 @@ class RequestsController < ApplicationController
       # res = client.send(mail)
       # p res.code
       # p res.body
-      redirect_to checkout_path
     else
       render :new
     end

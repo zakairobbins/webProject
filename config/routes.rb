@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'contact/new' => 'contact#new'
+
+  post 'contact/create' => 'contact#create'
+
   get 'orders/create'
 
   get 'orders/show'
