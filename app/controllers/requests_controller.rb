@@ -63,6 +63,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:name, :email, :address, :phone_number, :objective, experiences_attributes: [:company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards], educations_attributes: [:school_name, :degree, :location, :awards, :graduation_date], skills_attributes: [:description], volunteers_attributes: [:organization, :location, :start_date, :end_date, :duties])
+    params.require(:request).permit(:name, :email, :address, :phone_number, :objective, experiences_attributes: [:id, :company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards], educations_attributes: [:school_name, :degree, :location, :awards, :graduation_date], skills_attributes: [:description], volunteers_attributes: [:organization, :location, :start_date, :end_date, :duties])
   end
 end
