@@ -1,4 +1,6 @@
 class ContactController < ApplicationController
+  include EmailGenerator
+
   def new
   end
 
@@ -9,7 +11,7 @@ class ContactController < ApplicationController
         m.to = 'thatguyzakai@gmail.com'
         m.from = params[:email]
         m.subject = 'Contact request!'
-        m.text = params[:name]
+        m.text = consultation_email(params)
       end
       res = client.send(mail)
       p res.code

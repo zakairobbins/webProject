@@ -30,6 +30,11 @@
   height: 10em;
 }
 
+.footnote {
+  font-size: .8em;
+  text-align: center;
+}
+
 
 /*.fields-div {
   display: inline-block;
