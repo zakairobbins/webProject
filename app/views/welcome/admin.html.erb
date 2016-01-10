@@ -2,7 +2,12 @@
 <h1>Welcome to the CMS </h1>
 
 <h3>Resumes</h3>
-<p>price: <%=Product.find_by(title: "resume").price %></p>
+<p>price: <%=@resume.price %></p>
+<%= form_for @resume do |f| %>
+  <%= f.label_for "edit price", :price %>
+  <%= f.text_field :price %>
+  <%= f.submit "save" %>
+<% end %>
 <h3>Cover Letters</h3>
 <p>price: <%=Product.find_by(title: "cover letter").price %></p>
 <h3>CV's</h3>
