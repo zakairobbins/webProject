@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+
+
   get 'contact/new' => 'contact#new'
 
   post 'contact/create' => 'contact#create'
@@ -16,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
   resources :carts
   resources :line_items
-  resources :products
+  resources :products, only: [:update]
   resources :requests, except: [:index]
 
   root 'welcome#index'
@@ -26,5 +28,6 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/checkout' => 'carts#checkout'
+  get '/charlie' => 'products#edit'
 
 end

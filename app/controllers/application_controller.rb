@@ -5,8 +5,18 @@ class ApplicationController < ActionController::Base
 
 
   private
+
   def auth_current_user(user)
     session[:user_id] = user.id
     @current_user = user
   end
+
+  def require_admin
+    unless session[:user_id] && User.find(session[:user_id]).admin
+      flash[:error] = "You must sign in before continuing"
+      redirect_to login_url
+    end
+  end
+
+
 end
