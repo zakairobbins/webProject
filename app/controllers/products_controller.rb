@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :require_admin
+
   def edit
     @resume = Product.find_by(title: "resume")
     @cover_letter = Product.find_by(title: "cover letter")
