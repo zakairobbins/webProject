@@ -39,24 +39,28 @@
   </tbody>
 </table>
 
-<div class="inline">
-  <%= button_to 'Back to Shopping', root_path,
-                method: 'get', class: "button small" %>
-</div>
-
-<div class="inline">
+<div class="centered">
   <% if session[:order_id] %>
     <%= button_to 'Continue Checkout', edit_request_path(@request),
-                  method: 'get', class: "button success small" %>
+                  method: 'get',
+                  class: "button success large checkout-button" %>
   <% else %>
     <%= button_to 'Begin Checkout', new_request_path,
-                  method: 'get', class: "button success small" %>
+                  method: 'get',
+                  class: "button success small checkout-button" %>
   <% end %>
 </div>
 
-<div>
-  <%= button_to "Empty cart", @cart, method: :delete,
-      data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+<div class="centered">
+  <div class="inline">
+    <%= button_to 'Back to Shopping', root_path,
+                  method: 'get', class: "button small" %>
+  </div>
+
+  <div class="inline">
+    <%= button_to "Empty cart", @cart, method: :delete,
+        data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+  </div>
 </div>
 
 </div>

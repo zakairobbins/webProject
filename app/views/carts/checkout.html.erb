@@ -21,62 +21,120 @@
 
 <ul>
   <h3>Personal Info:</h3>
-  <li><%= @request.name %></li>
-  <li><%= @request.address %></li>
-  <li><%= @request.email %></li>
-  <li><%= @request.phone_number %></li>
-  <li><%= @request.objective %></li>
+  <li><strong>Name:</strong> <%= @request.name %></li>
+  <li><strong>Address:</strong> <%= @request.address %></li>
+  <li><strong>Email:</strong> <%= @request.email %></li>
+  <li><strong>Objective:</strong> <%= @request.objective %></li>
+  <hr />
 
   <h3>Experience:</h3>
   <% @request.experiences.each do |experience|  %>
     <div>
-      <li><%= experience.company %></li>
-      <li><%= experience.job_title %></li>
-      <li><%= experience.location %></li>
-      <li><%= experience.start_date %></li>
-      <li><%= experience.end_date %></li>
-      <li><%= experience.responsibilities %></li>
-      <li><%= experience.awards %></li>
+      <li><strong>Company:</strong> <%= experience.company %></li>
+      <% if experience.job_title.length > 0 %>
+        <li><strong>Job title:</strong> <%= experience.job_title %></li>
+      <% end %>
+      <% if experience.location.length > 0 %>
+        <li><strong>Location:</strong> <%= experience.location %></li>
+      <% end %>
+      <% if experience.start_date %>
+        <li><strong>Start date:</strong> <%= experience.start_date %></li>
+      <% end %>
+      <% if experience.end_date %>
+        <li><strong>End date:</strong> <%= experience.end_date %></li>
+      <% end %>
+      <% if experience.responsibilities.length > 0 %>
+        <li><strong>Responsibilities:</strong> <%= experience.responsibilities %></li>
+      <% end %>
+      <% if experience.awards.length > 0 %>
+        <li><strong>Awards:</strong> <%= experience.awards %></li>
+      <% end %>
     </div>
+    <hr />
   <% end %>
 
   <h3>Education:</h3>
   <% @request.educations.each do |edu| %>
-    <li><%= edu.degree %> = <%= edu.school_name %></li>
+    <div>
+      <li><strong>School:</strong> <%= edu.school_name %></li>
+      <% if edu.degree.length > 0 %>
+        <li><strong>Degree:</strong> <%= edu.degree %>
+      <% end %>
+      <% if edu.location.length > 0 %>
+        <li><strong>Location:</strong> <%= edu.location %>
+      <% end %>
+      <% if edu.graduation_date %>
+        <li><strong>Graduation date:</strong> <%= edu.graduation_date %>
+      <% end %>
+      <% if edu.awards.length > 0 %>
+        <li><strong>Awards:</strong> <%= edu.awards %>
+      <% end %>
+    </div>
+    <hr />
   <% end %>
 
   <h3>Skills:</h3>
+  <div class="list-div">
   <% @request.skills.each do |skill| %>
-    <li><%= skill.description %></li>
+      <li><%= skill.description %></li>
   <% end %>
+</div>
+  <hr />
 
   <h3>Volunteer Experience:</h3>
   <% @request.volunteers.each do |vol| %>
-    <li><%= vol.organization %></li>
+    <div>
+      <li><strong>Organization:</strong> <%= vol.organization %></li>
+      <% if vol.location.length > 0 %>
+        <li><strong>Location:</strong> <%= vol.location %></li>
+      <% end %>
+      <% if vol.start_date %>
+        <li><strong>Start date:</strong> <%= vol.start_date %></li>
+      <% end %>
+      <% if vol.end_date %>
+        <li><strong>End date:</strong> <%= vol.end_date %></li>
+      <% end %>
+      <% if vol.duties.length > 0 %>
+        <li><strong>Duties:</strong> <%= vol.duties %></li>
+      <% end %>
+    </div>
+    <hr />
   <% end %>
 </ul>
 
-<%= button_to 'Edit this order', cart_path(@cart),
-              method: 'get', class: "button small" %>
 
-<%= button_to 'Cancel this order', root_path,
-              method: 'get', class: "button warning small" %>
+<div class="centered">
+  <form action="https://www.paypal.com/cgi-bin/webscr"
+      method="post" target="_top">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="business" value="g7293@outlook.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden"
+        name="item_name" value="<%= @cart.generate_short_list %>">
+    <input type="hidden" name="amount" value="<%= @cart.total_price %>">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="button_subtype" value="services">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="tax_rate" value="0">
+    <input type="hidden" name="shipping" value="0">
+    <input type="hidden" name="bn"
+        value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
+    <button type="submit" class="button success large checkout-button">
+      <%= fa_icon "paypal" %> Check out with PayPal
+    </button>
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-  <input type="hidden" name="cmd" value="_xclick">
-  <input type="hidden" name="business" value="g7293@outlook.com">
-  <input type="hidden" name="lc" value="US">
-  <input type="hidden" name="item_name" value="<%= @cart.generate_short_list %>">
-  <input type="hidden" name="amount" value="<%= @cart.total_price %>">
-  <input type="hidden" name="currency_code" value="USD">
-  <input type="hidden" name="button_subtype" value="services">
-  <input type="hidden" name="no_note" value="0">
-  <input type="hidden" name="tax_rate" value="0">
-  <input type="hidden" name="shipping" value="0">
-  <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
-  <button type="submit" class="button" alt="PayPal">
-    <%= fa_icon "paypal" %> Check out with PayPal
-  </button>
+  </form>
+</div>
 
-</form>
+<div class="centered">
+  <div class="inline">
+    <%= button_to 'Edit this order', cart_path(@cart),
+        method: 'get', class: "button small" %>
+  </div>
+
+  <div class="inline">
+    <%= button_to 'Cancel this order', root_path,
+        method: 'get', class: "button alert small" %>
+  </div>
+</div>
 </div>
