@@ -2,10 +2,15 @@
 <h1>Welcome to the CMS </h1>
 
 <h3>Resumes</h3>
-<p>price: <%=Product.find_by(title: "resume").price %></p>
+
+<%= render 'resume' %>
+
 <h3>Cover Letters</h3>
-<p>price: <%=Product.find_by(title: "coverletter").price %></p>
+
+<%= render 'coverletter' %>
+
 <h3>CV's</h3>
-<p>price: <%=Product.find_by(title: "CV").price %></p>
+
+<%= render 'cv' %>
 
 </div>
