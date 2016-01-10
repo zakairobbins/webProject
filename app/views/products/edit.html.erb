@@ -1,26 +1,16 @@
 <div class="container">
-<h1>Welcome to the CMS </h1>
+  <h1>Welcome to the CMS </h1>
 
-<h3>Resumes</h3>
-<p>price: <%=@resume.price %></p>
-<%= form_for @resume do |f| %>
-  <%= f.label :price, "edit price" %>
-  <%= f.text_field :price %>
-  <%= f.submit "save" %>
-<% end %>
-<h3>Cover Letters</h3>
-<p>price: <%=@cover_letter.price %></p>
-<%= form_for @cover_letter do |f| %>
-  <%= f.label :price, "edit price" %>
-  <%= f.text_field :price %>
-  <%= f.submit "save" %>
-<% end %>
-<h3>CV's</h3>
-<p>price: <%=@cv.price %></p>
-<%= form_for @cv do |f| %>
-  <%= f.label :price, "edit price" %>
-  <%= f.text_field :price %>
-  <%= f.submit "save" %>
-<% end %>
+  <h3>Resumes</h3>
+
+  <%= render 'resume' %>
+
+  <h3>Cover Letters</h3>
+
+  <%= render 'coverletter' %>
+
+  <h3>CV's</h3>
+
+  <%= render 'cv' %>
 
 </div>

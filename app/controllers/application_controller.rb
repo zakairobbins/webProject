@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     unless session[:user_id] && User.find(session[:user_id]).admin
-      flash[:error] = "You must sign in before continuing"
+      flash[:warning] = "You must sign in before continuing"
       redirect_to login_url
     end
   end

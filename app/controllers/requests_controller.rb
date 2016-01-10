@@ -52,7 +52,7 @@ class RequestsController < ApplicationController
     if @request.update(request_params)
       redirect_to checkout_url
     else
-      flash[:error] = "Sorry, your personal information wasn't updated"
+      flash[:alert] = "Sorry, your personal information wasn't updated"
       render :edit
     end
   end
@@ -63,6 +63,10 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:name, :email, :address, :phone_number, :objective, experiences_attributes: [:id, :company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards], educations_attributes: [:school_name, :degree, :location, :awards, :graduation_date], skills_attributes: [:description], volunteers_attributes: [:organization, :location, :start_date, :end_date, :duties])
+    params.require(:request).permit(:name, :email, :address, :phone_number, :objective,
+      experiences_attributes: [:id, :company, :location, :start_date, :end_date, :job_title, :responsibilities, :awards],
+      educations_attributes: [:id, :school_name, :degree, :location, :awards, :graduation_date],
+      skills_attributes: [:id, :description],
+      volunteers_attributes: [:id, :organization, :location, :start_date, :end_date, :duties])
   end
 end

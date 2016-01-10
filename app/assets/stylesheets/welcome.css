@@ -1,5 +1,9 @@
 #splash {
-  height: 10%;
+  height: 87%;
+  width: 100%;
+}
+.splash {
+  padding: 7% 0;
 }
 
 .button {

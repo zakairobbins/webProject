@@ -55,5 +55,8 @@
     <%= link_to_add_fields "<i class='fa fa-plus'></i> Add volunteer experience".html_safe, f, :volunteers %>
   </fieldset>
 
-  <%= f.submit "Review Your Order"%>
+  <div class="centered">
+    <%= submit_tag 'Continue checkout',
+        class: 'button success large checkout-button'%>
+  </div>
 <% end %>
