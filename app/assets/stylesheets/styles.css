@@ -63,3 +63,14 @@ body {
 li {
   list-style: none;
 }
+
+.callout.splash {
+  height: 87%;
+  margin-bottom: 6rem;
+}
+
+.flash {
+  width: 65%;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-radius: .3em;
+}

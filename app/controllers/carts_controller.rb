@@ -37,7 +37,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      flash[:notice] = "Invalid cart"
+      flash[:alert] = "Invalid cart"
       redirect_to root_path
     end
 

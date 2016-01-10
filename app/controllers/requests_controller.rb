@@ -52,7 +52,7 @@ class RequestsController < ApplicationController
     if @request.update(request_params)
       redirect_to checkout_url
     else
-      flash[:error] = "Sorry, your personal information wasn't updated"
+      flash[:alert] = "Sorry, your personal information wasn't updated"
       render :edit
     end
   end
