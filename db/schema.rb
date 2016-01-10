@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229231652) do
+ActiveRecord::Schema.define(version: 20160108012938) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "order_id"
   end
+
+  add_index "carts", ["order_id"], name: "index_carts_on_order_id"
 
   create_table "educations", force: :cascade do |t|
     t.integer  "request_id"
@@ -54,6 +57,12 @@ ActiveRecord::Schema.define(version: 20151229231652) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.boolean  "completed",  default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -71,7 +80,10 @@ ActiveRecord::Schema.define(version: 20151229231652) do
     t.text     "objective"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "order_id"
   end
+
+  add_index "requests", ["order_id"], name: "index_requests_on_order_id"
 
   create_table "skills", force: :cascade do |t|
     t.integer  "request_id"
@@ -88,7 +100,10 @@ ActiveRecord::Schema.define(version: 20151229231652) do
     t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "order_id"
   end
+
+  add_index "users", ["order_id"], name: "index_users_on_order_id"
 
   create_table "volunteers", force: :cascade do |t|
     t.integer  "request_id"

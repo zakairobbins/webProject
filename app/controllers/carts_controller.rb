@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   def show
+    @request = Order.find(session[:order_id]).request if session[:order_id]
   end
 
   def index
@@ -19,8 +20,15 @@ class CartsController < ApplicationController
 
   def destroy
     @cart.destroy if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
+    session[:order_id] = nil
     flash[:success] = "Shopping cart empty"
     redirect_to root_url
+  end
+
+  def checkout
+    @cart = Cart.find(session[:cart_id])
+    @request = Order.find(session[:order_id]).request
   end
 
   private
@@ -29,7 +37,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      flash[:notice] = "Invalid cart"
+      flash[:alert] = "Invalid cart"
       redirect_to root_path
     end
 

@@ -1,5 +1,9 @@
 #splash {
   height: 87%;
+  width: 100%;
+}
+.splash {
+  padding: 7% 0;
 }
 
 .button {
@@ -17,3 +21,19 @@
 .inline {
   display: inline-block;
 }
+
+.testimonials {
+  height: 10em;
+  padding: 2em;
+  text-align: center;
+  margin: 3em auto;
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.4), inset -1px -1px 8px rgba(0, 0, 0, 0.4);
+}
+
+/*.hr-top {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hr-bottom {
+box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.4);
+}*/

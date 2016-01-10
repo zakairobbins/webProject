@@ -1,0 +1,27 @@
+<div class="form-section fields">
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <%= f.hidden_field :id %>
+      <%= f.label :company %>
+      <%= f.text_field :company, class: 'required' %>
+      <%= f.label :location %>
+      <%= f.text_area :location, rows: '3', cols: '28' %>
+      <%= f.label :start_date %>
+      <%= f.date_field :start_date %>
+      <%= f.label :end_date %>
+      <%= f.date_field :end_date %>
+    </div>
+
+    <div class="small-12 medium-6 columns">
+      <%= f.label :job_title %>
+      <%= f.text_field :job_title %>
+      <%= f.label :responsibilities %>
+      <%= f.text_area :responsibilities, rows: '3', cols: '28' %>
+      <%= f.label :awards %>
+      <%= f.text_area :awards, rows: '3', cols: '28' %>
+      <%= f.hidden_field :_destroy, class: 'destroy-hidden-field' %>
+    </div>
+
+    <a href="#" class="remove-link"><%= fa_icon "remove" %> remove</a>
+  </div>
+</div>
