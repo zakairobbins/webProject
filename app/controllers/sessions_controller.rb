@@ -7,7 +7,12 @@ class SessionsController < ApplicationController
     p params
     if (@user && @user.authenticate(params['session']['password']))
       session[:user_id] = @user.id
-      redirect_to root_path
+      unless @user.admin
+        redirect_to root_path
+      else
+        @products = Product.all
+        redirect_to charlie_path
+      end
     else
       render 'sessions/new'
     end
