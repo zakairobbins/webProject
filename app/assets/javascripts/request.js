@@ -1,17 +1,6 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
-
-    // $('body').on('click', 'a.remove-link', function(e) {
-    //   e.preventDefault();
-    //   console.log('remove-link clicked');
-    //   console.log($(this).closest('.fields').children('div').first().children('div').first().children('.required').val());
-    //   $(this).closest('.fields').children('div').first().children('div').first().children('.required').val('');
-    //   // $(this).closest('.fields').children('.required').first().val('');
-    //   // $(this).closest(".fields").hide();
-    //
-    // });
-
     $('body').on('click', 'a.remove-link', function(e) {
       e.preventDefault();
 
@@ -37,4 +26,10 @@ $(document).ready(function(){
 
       $(this).before($(this).data('fields').replace(regex, time));
     });
+
+    $('#file-upload-div-toggle').click(function(e){
+      e.preventDefault();
+      console.log('link clicked');
+      $('#file-upload-div').toggle();
+    })
 })

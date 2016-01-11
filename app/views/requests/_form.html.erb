@@ -1,3 +1,11 @@
+<a href='#' id="file-upload-div-toggle">Click here to upload a file</a>
+
+<div id="file-upload-div" style="display:none">
+  <%= form_tag '/', multipart: true %>
+    <%= label_tag "Choose a file:" %>
+    <%= file_field_tag "file" %>
+</div>
+
 <%= form_for @request do |f| %>
   <fieldset class="fieldset">
     <legend>Personal Info</legend>
