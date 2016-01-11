@@ -129,12 +129,12 @@
 <div class="centered">
   <div class="inline">
     <%= button_to 'Edit this order', cart_path(@cart),
-        method: 'get', class: "button small" %>
+        method: 'get', class: "button medium" %>
   </div>
 
   <div class="inline">
-    <%= button_to 'Cancel this order', root_path,
-        method: 'get', class: "button alert small" %>
+    <%= button_to "Cancel Order", @cart, method: :delete,
+        data: { confirm: 'Are you sure?' }, class: "button alert medium" %>
   </div>
 </div>
 </div>
