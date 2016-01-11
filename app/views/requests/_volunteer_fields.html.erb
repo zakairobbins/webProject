@@ -1,6 +1,7 @@
 <div class="form-section fields">
   <div class="row">
     <div class="small-12 medium-6 columns">
+      <%= hidden_field_tag 'type', '/volunteers/' %>
       <%= f.hidden_field :id %>
       <%= f.label :organization %>
       <%= f.text_field :organization, class: 'required' %>

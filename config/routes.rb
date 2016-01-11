@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :line_items
   resources :products, only: [:update]
   resources :requests, except: [:index]
+  resources :experiences, only: [:destroy]
+  resources :educations, only: [:destroy]
+  resources :volunteers, only: [:destroy]
+  resources :skills, only: [:destroy]
 
   root 'welcome#index'
 

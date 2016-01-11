@@ -2,13 +2,31 @@
 // All this logic will automatically be available in application.js.
 $(document).ready(function(){
 
+    // $('body').on('click', 'a.remove-link', function(e) {
+    //   e.preventDefault();
+    //   console.log('remove-link clicked');
+    //   console.log($(this).closest('.fields').children('div').first().children('div').first().children('.required').val());
+    //   $(this).closest('.fields').children('div').first().children('div').first().children('.required').val('');
+    //   // $(this).closest('.fields').children('.required').first().val('');
+    //   // $(this).closest(".fields").hide();
+    //
+    // });
+
     $('body').on('click', 'a.remove-link', function(e) {
       e.preventDefault();
-      console.log('remove-link clicked');
-      $(this).closest('.fields').children('.required').first().val('');
-      // $(this).prev("input[type=hidden]").val("1");
-      $(this).closest(".fields").hide();
 
+      var typeField = $($(this).closest('.fields').children('div').first().children('div').first().children('input:hidden')[0]).val();
+      var idField = $($(this).closest('.fields').children('div').first().children('div').first().children('input:hidden')[1]).val();
+      var url = typeField + idField;
+
+      $(this).closest('.fields').remove();
+      $.ajax({
+        type: 'delete',
+        url: url,
+        dataType: 'json'
+      }).done(function(data){
+        console.log(data.message);
+      });
     });
 
     $('a.add_fields').click(function(e) {
