@@ -30,6 +30,6 @@ $(document).ready(function(){
     $('#file-upload-div-toggle').click(function(e){
       e.preventDefault();
       console.log('link clicked');
-      $('#file-upload-div').toggle();
+      $('#file-upload-div').slideToggle(300);
     })
 })
