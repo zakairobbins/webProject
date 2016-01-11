@@ -1,6 +1,7 @@
 <div class="fields">
   <div class="row">
     <div class="small-12 medium-6 columns">
+      <%= hidden_field_tag 'type', '/skills/' %>
       <%= f.hidden_field :id %>
       <%= f.text_field :description, class: 'required', rows: '3', cols: '28' %>
 
