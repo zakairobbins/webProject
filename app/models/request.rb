@@ -1,4 +1,6 @@
 class Request < ActiveRecord::Base
+  mount_uploader :file, FileUploader
+
   has_many :skills, dependent: :destroy
   has_many :volunteers, dependent: :destroy
   has_many :educations, dependent: :destroy
