@@ -28,8 +28,11 @@
   <hr />
 
   <h3>Experience:</h3>
+      <% counter = 1 %>
   <% @request.experiences.each do |experience|  %>
     <div>
+      <li><strong><%= counter %></strong></li>
+      <% counter += 1 %>
       <li><strong>Company:</strong> <%= experience.company %></li>
       <% if experience.job_title.length > 0 %>
         <li><strong>Job title:</strong> <%= experience.job_title %></li>
@@ -54,8 +57,11 @@
   <% end %>
 
   <h3>Education:</h3>
+    <% counter = 1 %>
   <% @request.educations.each do |edu| %>
     <div>
+      <li><strong><%= counter %></strong></li>
+      <% counter += 1 %>
       <li><strong>School:</strong> <%= edu.school_name %></li>
       <% if edu.degree.length > 0 %>
         <li><strong>Degree:</strong> <%= edu.degree %>
@@ -74,16 +80,23 @@
   <% end %>
 
   <h3>Skills:</h3>
+  <% counter = 1 %>
   <div class="list-div">
   <% @request.skills.each do |skill| %>
+      <li><strong><%= counter %></strong></li>
+      <% counter += 1 %>
       <li><%= skill.description %></li>
+      <hr />
   <% end %>
 </div>
   <hr />
 
   <h3>Volunteer Experience:</h3>
+    <% counter = 1 %>
   <% @request.volunteers.each do |vol| %>
     <div>
+      <li><strong><%= counter %></strong></li>
+      <% counter += 1 %>
       <li><strong>Organization:</strong> <%= vol.organization %></li>
       <% if vol.location.length > 0 %>
         <li><strong>Location:</strong> <%= vol.location %></li>

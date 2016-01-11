@@ -74,3 +74,7 @@ li {
   border: 1px solid rgba(10, 10, 10, 0.25);
   border-radius: .3em;
 }
+
+.shadow {
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.4), inset -1px -1px 8px rgba(0, 0, 0, 0.4);
+}

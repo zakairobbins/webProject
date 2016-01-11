@@ -40,14 +40,16 @@
 </table>
 
 <div class="centered">
-  <% if session[:order_id] %>
-    <%= button_to 'Continue Checkout', edit_request_path(@request),
-                  method: 'get',
-                  class: "button success large checkout-button" %>
-  <% else %>
-    <%= button_to 'Begin Checkout', new_request_path,
-                  method: 'get',
-                  class: "button success large checkout-button" %>
+  <% unless @cart.line_items.empty? %>
+    <% if session[:order_id] %>
+      <%= button_to 'Continue Checkout', edit_request_path(@request),
+                    method: 'get',
+                    class: "button success large checkout-button" %>
+    <% else %>
+      <%= button_to 'Begin Checkout', new_request_path,
+                    method: 'get',
+                    class: "button success large checkout-button" %>
+    <% end %>
   <% end %>
 </div>
 
@@ -58,8 +60,10 @@
   </div>
 
   <div class="inline">
-    <%= button_to "Empty cart", @cart, method: :delete,
-        data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+    <% unless @cart.line_items.empty? %>
+      <%= button_to "Empty cart", @cart, method: :delete,
+          data: { confirm: 'Are you sure?' }, class: "button alert small" %>
+    <% end %>
   </div>
 </div>
 

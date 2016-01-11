@@ -27,7 +27,10 @@
   padding: 2em;
   text-align: center;
   margin: 3em auto;
-  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.4), inset -1px -1px 8px rgba(0, 0, 0, 0.4);
+}
+.padded {
+  padding: .5em;
+  margin: 0 auto;
 }
 
 /*.hr-top {
