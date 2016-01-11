@@ -20,14 +20,14 @@
 </table>
 
 <ul>
-  <h3>Personal Info:</h3>
+  <h4>Personal Info:</h4>
   <li><strong>Name:</strong> <%= @request.name %></li>
   <li><strong>Address:</strong> <%= @request.address %></li>
   <li><strong>Email:</strong> <%= @request.email %></li>
   <li><strong>Objective:</strong> <%= @request.objective %></li>
   <hr />
 
-  <h3>Experience:</h3>
+  <h4>Experience:</h4>
   <% @request.experiences.each do |experience|  %>
     <div>
       <li><strong>Company:</strong> <%= experience.company %></li>
@@ -53,7 +53,7 @@
     <hr />
   <% end %>
 
-  <h3>Education:</h3>
+  <h4>Education:</h4>
   <% @request.educations.each do |edu| %>
     <div>
       <li><strong>School:</strong> <%= edu.school_name %></li>
@@ -73,7 +73,7 @@
     <hr />
   <% end %>
 
-  <h3>Skills:</h3>
+  <h4>Skills:</h4>
   <div class="list-div">
   <% @request.skills.each do |skill| %>
       <li><%= skill.description %></li>
@@ -81,7 +81,7 @@
 </div>
   <hr />
 
-  <h3>Volunteer Experience:</h3>
+  <h4>Volunteer Experience:</h4>
   <% @request.volunteers.each do |vol| %>
     <div>
       <li><strong>Organization:</strong> <%= vol.organization %></li>
@@ -99,6 +99,11 @@
       <% end %>
     </div>
     <hr />
+  <% end %>
+
+  <h4>Additional Comments:</h4>
+  <% if @request.comment && @request.comment.length > 0 %>
+    <li><%= @request.comment %></li>
   <% end %>
 </ul>
 
