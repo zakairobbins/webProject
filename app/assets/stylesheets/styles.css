@@ -13,7 +13,9 @@ body {
   margin: 1em 0;
   padding: 1em;
 }
-
+.request-form {
+  padding: 6rm;
+}
 .request-form input {
   width: 16em;
 }
@@ -30,8 +32,8 @@ body {
 }
 
 .contact-message > textarea {
-  width: 25em;
-  height: 10em;
+  width: 20rem;
+  height: 10rem;
 }
 
 .footnote {

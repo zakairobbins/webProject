@@ -1,11 +1,14 @@
-<a href='#' id="file-upload-div-toggle">Click here to upload a file</a>
-
-<div id="file-upload-div" style="display:none">
+<h1 class="text-center">Personal Information</h1>
+<p>
+  Please enter the information you want featured on your resume, CV, or cover letter. Be sure to include all your relevant experience. If you would like to upload a preexisting resume or other relevant documents,
+  <a href='#' id="file-upload-div-toggle">Click here to upload a file</a>
+</p>
+<!-- <div id="file-upload-div" style="display:none">
   <%= form_tag '/', multipart: true %>
     <%= label_tag "Choose a file:" %>
     <%= file_field_tag "file" %>
     <%= submit_tag '/' %>
-</div>
+</div> -->
 
 <%= form_for @request do |f| %>
   <fieldset class="fieldset">
