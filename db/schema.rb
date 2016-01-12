@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111014015) do
+ActiveRecord::Schema.define(version: 20160111023049) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20160111014015) do
     t.datetime "updated_at",   null: false
     t.integer  "order_id"
     t.string   "file"
+    t.text     "comment"
   end
 
   add_index "requests", ["order_id"], name: "index_requests_on_order_id"

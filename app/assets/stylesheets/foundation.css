@@ -1462,11 +1462,11 @@ kbd {
       background: #5f5f5f;
       color: #fff; }
   .button.success {
-    background: #3adb76;
+    background: #9ad14d;
     color: #fff;
     }
     .button.success:hover, .button.success:focus {
-      background: #22bb5b;
+      background: #86b840;
       color: #fff; }
   .button.alert {
     background: #ec5840;

@@ -1,3 +1,11 @@
+<a href='#' id="file-upload-div-toggle">Click here to upload a file</a>
+
+<div id="file-upload-div" style="display:none">
+  <%= form_tag '/', multipart: true %>
+    <%= label_tag "Choose a file:" %>
+    <%= file_field_tag "file" %>
+</div>
+
 <%= form_for @request do |f| %>
   <fieldset class="fieldset">
     <legend>Personal Info</legend>
@@ -53,6 +61,11 @@
     <% end %>
 
     <%= link_to_add_fields "<i class='fa fa-plus'></i> Add volunteer experience".html_safe, f, :volunteers %>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend>Additional Notes</legend>
+    <%= f.text_area :comment, rows: '3', cols: '28' %>
   </fieldset>
 
   <div class="centered">

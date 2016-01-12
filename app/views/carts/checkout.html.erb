@@ -20,14 +20,14 @@
 </table>
 
 <ul>
-  <h3>Personal Info:</h3>
+  <h4>Personal Info:</h4>
   <li><strong>Name:</strong> <%= @request.name %></li>
   <li><strong>Address:</strong> <%= @request.address %></li>
   <li><strong>Email:</strong> <%= @request.email %></li>
   <li><strong>Objective:</strong> <%= @request.objective %></li>
   <hr />
 
-  <h3>Experience:</h3>
+  <h4>Experience:</h4>
       <% counter = 1 %>
   <% @request.experiences.each do |experience|  %>
     <div>
@@ -56,7 +56,7 @@
     <hr />
   <% end %>
 
-  <h3>Education:</h3>
+  <h4>Education:</h4>
     <% counter = 1 %>
   <% @request.educations.each do |edu| %>
     <div>
@@ -79,7 +79,7 @@
     <hr />
   <% end %>
 
-  <h3>Skills:</h3>
+  <h4>Skills:</h4>
   <% counter = 1 %>
   <div class="list-div">
   <% @request.skills.each do |skill| %>
@@ -91,7 +91,7 @@
 </div>
   <hr />
 
-  <h3>Volunteer Experience:</h3>
+  <h4>Volunteer Experience:</h4>
     <% counter = 1 %>
   <% @request.volunteers.each do |vol| %>
     <div>
@@ -112,6 +112,11 @@
       <% end %>
     </div>
     <hr />
+  <% end %>
+
+  <h4>Additional Comments:</h4>
+  <% if @request.comment && @request.comment.length > 0 %>
+    <li><%= @request.comment %></li>
   <% end %>
 </ul>
 
