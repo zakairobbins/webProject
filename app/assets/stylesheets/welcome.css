@@ -3,7 +3,8 @@
   width: 100%;
 }
 .splash {
-  padding: 7% 0;
+  margin: 0em 0em .5em 0em;
+  padding: 2em 2em 1em 2em;
 }
 
 .button {
@@ -31,6 +32,10 @@
 .padded {
   padding: .5em;
   margin: 0 auto;
+}
+
+.welcome-text {
+  height: 8.5em;
 }
 
 /*.hr-top {

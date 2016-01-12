@@ -4,6 +4,7 @@
   <%= form_tag '/', multipart: true %>
     <%= label_tag "Choose a file:" %>
     <%= file_field_tag "file" %>
+    <%= submit_tag '/' %>
 </div>
 
 <%= form_for @request do |f| %>
