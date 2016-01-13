@@ -7,7 +7,7 @@
   <%= form_tag '/', multipart: true %>
     <%= label_tag "Choose a file:" %>
     <%= file_field_tag "file" %>
-    <%= submit_tag '/' %>
+    <%= submit_tag 'Attatch file' %>
 </div> -->
 
 <%= form_for @request do |f| %>
@@ -73,7 +73,7 @@
   </fieldset>
 
   <div class="centered">
-    <%= submit_tag 'Continue checkout',
+    <%= f.submit 'Continue checkout',
         class: 'button success large checkout-button'%>
   </div>
 <% end %>
