@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def edit
     @resume = Product.find_by(title: 'resume')
-    @coverletter = Product.find_by(title: 'coverletter')
+    @coverletter = Product.find_by(title: 'cover letter')
     @cv = Product.find_by(title: 'CV')
   end
 
