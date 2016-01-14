@@ -149,7 +149,7 @@
   <input type="hidden" name="shipping" value="0">
   <input type="hidden" name="bn"
   value="PP-BuyNowBF:btn_buynow_SM.gif:NonHostedGuest">
-  <button type="submit" class="button success large checkout-button">
+  <button type="submit" class="button success large checkout-button" id="paypal-button">
     <%= fa_icon "paypal" %> Check out with PayPal
   </button>
 
@@ -168,3 +168,5 @@
   </div>
 </div>
 </div>
+
+<form><input type="hidden" id="order-id-form" value="<%= @request.order_id %>"/></form>

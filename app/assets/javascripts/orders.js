@@ -1,2 +1,11 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function(){
+
+  $("#paypal-button").on("click", function(){
+    $.ajax({
+      type: "put",
+      url: "/orders/" + $("#order-id-form").val(),
+      dataType: "json"
+    });
+  });
+
+});

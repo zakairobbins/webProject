@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   get 'contact/new' => 'contact#new'
   post 'contact/create' => 'contact#create'
-  get 'orders/create'
-  get 'orders/show'
-  get 'orders/destroy'
 
+  resources :orders, only: [:creat, :show, :update, :destroy]
   resources :sessions
   resources :resumes, only: [:index, :show]
   resources :users

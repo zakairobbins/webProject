@@ -80,3 +80,9 @@ li {
 .shadow {
   box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.4), inset -1px -1px 8px rgba(0, 0, 0, 0.4);
 }
+
+.contact-form {
+  padding-left: 24em;
+  padding-right: 24em;
+}
+

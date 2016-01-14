@@ -19,7 +19,7 @@
     </div>
     <div class="medium-6 columns medium-pull-6">
     <h2>How we work</h2>
-      <p>We work closely with our clients to create promotional materials that put you in the best light possible. Every resume we write is unique; we stay in personal contact to ensure that your application stands out. We encourage our clients to set up a consultation before placing an order so we can discuss your needs and expectations. </p>
+      <p class="justified">We work closely with our clients to create promotional materials that put you in the best light possible. Every resume we write is unique; we stay in personal contact to ensure that your application stands out. We encourage our clients to set up a consultation before placing an order so we can discuss your needs and expectations. </p>
       <%= link_to 'Set up a Consultation', contact_new_path, class: "button front large" %>
     </div>
   </div>
@@ -27,9 +27,9 @@
   <div class="row">
     <div class="medium-4 columns">
       <h3>Resumes</h3>
-      <p>Let us write a personalized resume that highlights your skills and experience. We can tailor your resume to match any professional level, industry, or a unique opportunity. </p>
-      <div class="centered">
-        <div class="inline pull-right">
+      <p class="justified">Let us write a personalized resume that highlights your skills and experience. We can tailor your resume to match any professional level, industry, or a unique opportunity. </p>
+      <div>
+        <div class="inline centered">
           <%= form_tag line_items_path(product_id: 2) do %>
           <button class="button front medium" type="input">
             <%= fa_icon "shopping-cart" %> Buy Now
@@ -41,9 +41,9 @@
 
     <div class="medium-4 columns">
       <h3>Cover Letters</h3>
-      <p>Leverage our expertise in professional communications and deliver a cover letter that's specially designed to highlight what makes you the best fit for the job. </p>
-      <div class="centered">
-        <div class="inline pull-right">
+      <p class="justified">Leverage our expertise in professional communications and deliver a cover letter that's specially designed to highlight what makes you the best fit for the job. </p>
+      <div>
+        <div class="inline centered">
           <%= form_tag line_items_path(product_id: 3) do %>
           <button class="button front medium" type="input">
             <%= fa_icon "shopping-cart" %> Buy Now
@@ -54,10 +54,10 @@
     </div>
 
     <div class="medium-4 columns">
-      <h3>Curriculum Vitae (CV)</h3>
-      <p>How do you sum up a career's worth of experience? Let us design a CV that focuses on the most important information employers are looking for in your industry. </p>
-      <div class="centered">
-        <div class="inline pull-right">
+      <h3>Curriculum Vitae</h3>
+      <p class="justified">How do you sum up a career's worth of experience? Let us design a CV that focuses on the most important information employers are looking for in your industry. </p>
+      <div>
+        <div class="inline centered">
           <%= form_tag line_items_path(product_id: 5) do %>
           <button class="button front medium" type="input">
             <%= fa_icon "shopping-cart" %> Buy Now

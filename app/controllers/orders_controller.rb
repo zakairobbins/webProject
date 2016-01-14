@@ -7,6 +7,17 @@ class OrdersController < ApplicationController
   def show
   end
 
+  def update
+    order = Order.find(params[:id])
+    respond_to do |format|
+      format.json{
+        order.update_attributes(completed: true)
+        p order.completed
+        render json: order
+      }
+    end
+  end
+
   def destroy
   end
 
