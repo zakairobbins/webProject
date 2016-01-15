@@ -12,7 +12,7 @@ class ContactController < ApplicationController
         m.from = params[:email]
         m.subject = 'Contact request!'
         m.text = consultation_email(params)
-        m.add_attachment
+        m.add_attachment()
       end
       res = client.send(mail)
       p res.code

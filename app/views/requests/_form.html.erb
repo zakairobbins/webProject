@@ -3,12 +3,15 @@
   Please enter the information you want featured on your resume, CV, or cover letter. Be sure to include all your relevant experience. If you would like to upload a preexisting resume or other relevant documents,
   <a href='#' id="file-upload-div-toggle">Click here to upload a file</a>
 </p>
-<!-- <div id="file-upload-div" style="display:none">
-  <%= form_tag '/', multipart: true %>
+<div id="file-upload-div" style="display:none">
+  <%# form_tag '/', multipart: true %>
+    <form action="/" multipart="true" enctype="multipart/form-data" accept-charset="UTF-8" method="post" id="file-form">
     <%= label_tag "Choose a file:" %>
-    <%= file_field_tag "file" %>
-    <%= submit_tag 'Attatch file' %>
-</div> -->
+    <%= file_field_tag "file", id: "file-select" %>
+    <%= submit_tag 'Attach file', id: "upload-button"%>
+    </form>
+</div>
+<form><input type="hidden" id="request-id-form" value="<%= @request.id %>"/></form>
 
 <%= form_for @request do |f| %>
   <fieldset class="fieldset">

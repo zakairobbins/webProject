@@ -5,6 +5,7 @@ $(document).ready(function(){
       type: "put",
       url: "/orders/" + $("#order-id-form").val(),
       dataType: "json"
+
     });
   });
 

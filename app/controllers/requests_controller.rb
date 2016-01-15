@@ -48,12 +48,23 @@ class RequestsController < ApplicationController
 
   def update
     @request = Order.find(session[:order_id]).request
-
-    if @request.update(request_params)
-      redirect_to checkout_url
-    else
-      flash[:alert] = "Sorry, your personal information wasn't updated"
-      render :edit
+    respond_to do |format|
+      format.json{
+        @request.file = params[:file]
+        if @request.save
+          render json: @request
+        else
+          render json: @request
+        end
+      }
+      format.html{
+        if @request.update(request_params)
+          redirect_to checkout_url
+        else
+          flash[:alert] = "Sorry, your personal information wasn't updated"
+          render :edit
+        end
+      }
     end
   end
 
