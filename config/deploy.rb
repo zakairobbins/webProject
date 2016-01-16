@@ -44,8 +44,8 @@ set :application, "resumesthatresonate"
 
 set :repository,  "https://github.com/zakairobbins/webProject"
 
-
-
+# this may fix public asset errors
+set :normalize_asset_timestamps, false
 
 
 ###### There is no need to edit anything below this line ######
