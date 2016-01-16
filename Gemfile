@@ -10,7 +10,6 @@ gem 'bcrypt',     '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'sendgrid-ruby'
 gem 'carrierwave'
-gem 'capistrano', '~> 3.4.0'
 
 group :development, :test do
   gem 'pry-rails'
@@ -22,4 +21,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-passenger'
 end
