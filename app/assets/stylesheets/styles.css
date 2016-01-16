@@ -1,4 +1,88 @@
+body {
+  box-sizing: border-box;
+}
+
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
+  padding-bottom: 4rem;
 }
+
+.form-section {
+  border: 1px solid #cacaca;
+  margin: 1em 0;
+  padding: 1em;
+}
+.request-form {
+  padding: 6rm;
+}
+.request-form input {
+  width: 16em;
+}
+
+.request-form textarea {
+  columns: 40;
+}
+
+.remove-link {
+  color: #cb310f;
+}
+.remove-link:hover {
+  color: #cb310f;
+}
+
+.contact-message > textarea {
+  width: 20rem;
+  height: 10rem;
+}
+
+.footnote {
+  font-size: .8em;
+  text-align: center;
+}
+
+.right-aligned {
+  text-align: right;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.checkout-button {
+  font-weight: bold;
+  text-shadow: 1px 1px #5f793a;
+}
+
+.cart-table {
+  margin: 2rem auto;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+.callout.splash {
+  height: 87%;
+  margin-bottom: 6rem;
+}
+
+.flash {
+  width: 65%;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-radius: .3em;
+}
+
+.shadow {
+  box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.4), inset -1px -1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.contact-form {
+  padding-left: 24em;
+  padding-right: 24em;
+}
+

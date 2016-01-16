@@ -1,49 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>ResumesThatResonate</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="header">
-    <div class="pure-menu pure-menu-horizontal green">
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item">
-          <a href=<%= root_path %>><img src="/img/rtr_logo.png", height="50"></a>
-        </li>
-        <li class="pure-menu-item">
-          <%= link_to "Samples", resumes_path, class: "pure-menu-link" %>
-        </li>
-        <li class="pure-menu-item">
-          <%= link_to "Consultation", root_path, class: "pure-menu-link" %>
-        </li>
-        <li class="pure-menu-item"><%= link_to "Terms and Conditions", terms_path, class: "pure-menu-link" %>
-        </li>
-      </ul>
-      <ul class="pure-menu-list" id="login-out-links">
-        <% if session[:user_id] %>
-        <li class="pure-menu-item">
-          <%= link_to "Log Out", logout_path, class: "pure-menu-link" %>
-        </li>
-        <% else %>
-        <li class="pure-menu-item">
-          <%= link_to "Sign Up", new_user_path, class: "pure-menu-link" %>
-        </li>
-        <li class="pure-menu-item">
-          <%= link_to "Log In", login_path, class: "pure-menu-link" %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-
-  <%= yield %>
-
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,8 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <link href="css/featherlight.css" type="text/css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="/css/featherlight.css">
+  <link rel="stylesheet" href="/css/featherlight.gallery.css">
 </head>
 <body>
 <header class="top-bar" id="header">
@@ -62,21 +16,13 @@
         <a href=<%= root_path %>><img src="/img/rtr_logo.png" width="75" id="logo-img"></a>
       </li>
       <li><a href="/#work-samples">Samples</a></li>
-      <li><a href="#">Consultation</a></li>
+      <li><%= link_to "Contact", contact_new_path %></li>
       <li><%= link_to "Terms and Conditons", terms_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="menu" id="menu-right">
-      <li><%= link_to "Shopping Cart", cart_path(session[:cart_id]) %></li>
-      <% if session[:user_id] %>
-        <li><%= link_to "Log out", logout_path %></li>
-      <% else %>
-        <li><%= link_to "Sign up", new_user_path %></li>
-        <li><%= link_to "Log in", login_path %></li>
-      <% end %>
-      <!-- <li><a href="#">Five</a></li> -->
-      <!-- <li><a href="#">Terms and Conditions</a></li> -->
+        <li><%= link_to "<i class='fa fa-shopping-cart'></i> Shopping Cart".html_safe, cart_path(session[:cart_id]) %></li>
     </ul>
   </div>
 
@@ -85,13 +31,13 @@
 
   <div class="centered">
     <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
+      <%= content_tag :div, value, class: "callout #{key} flash centered" %>
     <% end %>
   </div>
 
   <%= yield %>
 
-  <script src="js/featherlight.js" type="text/javascript" charset="utf-8"></script>
+
 
 </body>
 

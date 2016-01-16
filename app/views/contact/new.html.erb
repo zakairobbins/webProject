@@ -1,0 +1,23 @@
+<div class="container request-form padded">
+  <div class="text-center">
+    <h1>Contact</h1>
+    <p>If you have any questions about our process or services, send us a message below and we'll contact you shortly.</p>
+  </div>
+  <fieldset class="fieldset">
+    <div class="row contact-form">
+      <%= form_tag contact_create_path, class: "contact-message" do %>
+      <%= label_tag :name, 'Name' %>
+      <%= text_field_tag :name %>
+      <%= label_tag :email, 'Email' %>
+      <%= text_field_tag :email %>
+      <%= label_tag :phone_number, 'Phone Number' %>
+      <%= text_field_tag :phone_number %>
+      <%= label_tag :message, 'Message' %>
+      <%= text_area_tag :message %>
+      <%= submit_tag "Send", class: 'button success large'%>
+      <% end %>
+
+    </div>
+  </fieldset>
+</div>
+

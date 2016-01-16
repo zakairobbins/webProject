@@ -1,0 +1,10 @@
+<ul>
+<% @request.attributes.each do |key, value| %>
+  <li><%= "#{key}: #{value}" %></li>
+<% end %>
+
+<h3>Experience:</h3>
+<% @request.experiences.each do |experience|  %>
+  <li><%= experience.company %></li>
+<% end %>
+</ul>
