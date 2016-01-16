@@ -183,10 +183,6 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-<<<<<<< HEAD
-  capistrano (~> 2.15.4)
-=======
->>>>>>> parent of 662c04b... add capistrano gems
   carrierwave
   dotenv-rails
   faker
