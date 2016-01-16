@@ -13,13 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20160111023049) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "order_id"
   end
 
-  add_index "carts", ["order_id"], name: "index_carts_on_order_id"
+  add_index "carts", ["order_id"], name: "index_carts_on_order_id", using: :btree
 
   create_table "educations", force: :cascade do |t|
     t.integer  "request_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "educations", ["request_id"], name: "index_educations_on_request_id"
+  add_index "educations", ["request_id"], name: "index_educations_on_request_id", using: :btree
 
   create_table "experiences", force: :cascade do |t|
     t.integer  "request_id"
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "experiences", ["request_id"], name: "index_experiences_on_request_id"
+  add_index "experiences", ["request_id"], name: "index_experiences_on_request_id", using: :btree
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -85,7 +88,7 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.text     "comment"
   end
 
-  add_index "requests", ["order_id"], name: "index_requests_on_order_id"
+  add_index "requests", ["order_id"], name: "index_requests_on_order_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.integer  "request_id"
@@ -94,7 +97,7 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "skills", ["request_id"], name: "index_skills_on_request_id"
+  add_index "skills", ["request_id"], name: "index_skills_on_request_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -105,7 +108,7 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.integer  "order_id"
   end
 
-  add_index "users", ["order_id"], name: "index_users_on_order_id"
+  add_index "users", ["order_id"], name: "index_users_on_order_id", using: :btree
 
   create_table "volunteers", force: :cascade do |t|
     t.integer  "request_id"
@@ -118,6 +121,13 @@ ActiveRecord::Schema.define(version: 20160111023049) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "volunteers", ["request_id"], name: "index_volunteers_on_request_id"
+  add_index "volunteers", ["request_id"], name: "index_volunteers_on_request_id", using: :btree
 
+  add_foreign_key "carts", "orders"
+  add_foreign_key "educations", "requests"
+  add_foreign_key "experiences", "requests"
+  add_foreign_key "requests", "orders"
+  add_foreign_key "skills", "requests"
+  add_foreign_key "users", "orders"
+  add_foreign_key "volunteers", "requests"
 end
