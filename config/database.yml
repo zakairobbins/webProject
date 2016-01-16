@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: rtr_production
-  username: rtr
+  database: resumest_production
+  username: resumest
   password: <%= ENV['RTR_DATABASE_PASSWORD'] %>
