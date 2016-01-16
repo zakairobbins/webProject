@@ -11,7 +11,7 @@ gem 'font-awesome-rails'
 gem 'sendgrid-ruby'
 gem 'carrierwave'
 gem 'json', '~> 1.8.3'
-# gem 'rake', '10.4.2'
+gem 'rake', '10.5.0'
 
 group :development, :test do
   gem 'pry-rails'
