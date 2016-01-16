@@ -42,12 +42,6 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.1)
-    capistrano (2.15.7)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -91,6 +85,7 @@ GEM
     minitest (5.8.3)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+<<<<<<< HEAD
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -98,6 +93,8 @@ GEM
     net-ssh (3.0.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+=======
+>>>>>>> parent of 662c04b... add capistrano gems
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     pry (0.10.3)
@@ -196,7 +193,10 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+<<<<<<< HEAD
   capistrano (~> 2.15.4)
+=======
+>>>>>>> parent of 662c04b... add capistrano gems
   carrierwave
   dotenv-rails
   faker
