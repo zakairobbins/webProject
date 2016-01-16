@@ -10,6 +10,7 @@ gem 'bcrypt',     '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'sendgrid-ruby'
 gem 'carrierwave'
+gem 'json', '~> 1.8.3'
 
 group :development, :test do
   gem 'pry-rails'
