@@ -21,5 +21,5 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
+  gem 'capistrano', '~> 2.15.4'
 end
