@@ -98,13 +98,13 @@ set :repository,  "https://github.com/zakairobbins/webProject"
 
 ###### There is no need to edit anything below this line ######
 
-set :deploy_to, "/home/#{user}/#{application}"
+set :deploy_to, "/home/resumest/resumesthatresonate"
 
 set :use_sudo, false
 
 set :group_writable, false
 
-default_run_options[:pty] = true
+# default_run_options[:pty] = true
 
 
 
