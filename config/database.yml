@@ -21,7 +21,9 @@ test:
   database: rtr_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: resumest_production
+  pool: 5
   username: resumest_admin
   password: <%= ENV['RTR_DATABASE_PASSWORD'] %>
