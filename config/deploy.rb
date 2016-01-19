@@ -30,7 +30,7 @@ set :scm_password, Proc.new { CLI.password_prompt "git Password: "}
 
 set :scm, :git
 
-
+set :branch, "production-database"
 
 # The name of your application, this will also be the folder were your application
 
@@ -47,6 +47,13 @@ set :repository,  "https://github.com/zakairobbins/webProject"
 # this may fix public asset errors
 set :normalize_asset_timestamps, false
 
+# this may fix possible environment issues
+
+set :rails_env, "production"
+
+# control how many releases are stored on the server
+
+set :keep_releases, 5
 
 ###### There is no need to edit anything below this line ######
 
