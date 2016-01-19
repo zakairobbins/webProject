@@ -86,3 +86,23 @@ li {
   padding-right: 24em;
 }
 
+.checkout-buttons {
+  width: 20em;
+  height: 10em;
+  top: 18em;
+  left: 59em;
+  position: fixed;
+  /*border: 1px solid black;
+  border-radius: 15px;*/
+  box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.4)
+}
+
+.checkout-buttons > .centered {
+  /*margin: 0 auto;*/
+}
+
+.checkout-container {
+  width: 65%;
+  margin-left: 7.5%;
+  margin-right: 37.5%;
+}
