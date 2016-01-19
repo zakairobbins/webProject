@@ -12,6 +12,7 @@ gem 'sendgrid-ruby'
 gem 'carrierwave'
 gem 'json', '~> 1.8.3'
 gem 'rake', '10.4.2'
+gem 'uglifier', '~> 2.7', '>= 2.7.2'
 
 group :development, :test do
   gem 'pry-rails'
