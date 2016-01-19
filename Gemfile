@@ -13,6 +13,8 @@ gem 'carrierwave'
 gem 'json', '~> 1.8.3'
 gem 'rake', '10.4.2'
 gem 'uglifier', '~> 2.7', '>= 2.7.2'
+gem 'execjs', '~> 2.6'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'pry-rails'

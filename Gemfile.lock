@@ -81,6 +81,7 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -141,6 +142,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.1)
       json (~> 1.4)
+    ref (2.0.0)
     rspec-core (3.4.1)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -181,6 +183,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    therubyracer (0.12.2)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -203,6 +208,7 @@ DEPENDENCIES
   capistrano (~> 2.15.4)
   carrierwave
   dotenv-rails
+  execjs (~> 2.6)
   faker
   font-awesome-rails
   jbuilder (~> 2.0)
@@ -217,6 +223,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sendgrid-ruby
+  therubyracer
   uglifier (~> 2.7, >= 2.7.2)
   web-console (~> 2.0)
 
