@@ -38,7 +38,7 @@ set :branch, "production-database"
 
 set :application, "resumesthatresonate"
 
-
+set :asset_env, "#{asset_env} RAILS_RELATIVE_URL_ROOT=/resumesthatresonate"
 
 # the url for your repository
 
